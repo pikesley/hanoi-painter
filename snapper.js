@@ -9,7 +9,7 @@ const puppeteer = require('puppeteer');
     {
       path: `screens/${ process.argv[process.argv.length - 1] }.png`,
       clip: {
-	      x: 260, y:560, width: 745, height: 210
+	      x: 260, y:575, width: 745, height: 210
             }
     }
   );
