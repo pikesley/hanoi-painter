@@ -1,6 +1,6 @@
 # Hanoi Painter
 
-_Who among hasn't wanted to play the Towers of Hanoi on the Github commit-history graph?_
+_[Who among hasn't wanted to play the Towers of Hanoi on the Github commit-history graph?](https://github.com/towers-of-hanoi)_
 
 I made some changes to my [Hanoi Jane](http://sam.pikesley.org/projects/hanoi-jane/) gem:
 * I added a [new formatter](https://github.com/pikesley/hanoi-jane/blob/master/lib/hanoi/jane/formatters/github.rb) which renders the output to a 52*7 grid, suitable for the Github graph
@@ -75,4 +75,4 @@ Needs:
 
 # Timescale
 
-It takes 2187 moves to solve the 7-disc Towers of Hanoi (3**7). EMF Camp 2020 is about 16600 hours away from now, 2018-10-06 (presuming it happens around the same time as this year's), and I want this to finish right in the middle of EMF. 16600 / 2187 is ~7.5, so I'm cronning this for three times a day and I'll review that schedule when the actual dates are announced 
+It takes 2187 moves to solve the 7-disc Towers of Hanoi (3**7). EMF Camp 2020 is about 16600 hours away from now, 2018-10-06 (presuming it happens around the same time as this year's), and I want this to finish right in the middle of EMF. 16600 / 2187 is ~7.5, so I'm cronning this for three times a day and I'll review that schedule when the actual dates are announced
