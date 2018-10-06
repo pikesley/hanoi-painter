@@ -69,7 +69,7 @@ namespace :screenshot do
   task take: 'towers:retrieve' do 
     puts 'taking screenshots'
     filename = @towers.ternary
-    `node snapper.js #{@conf['gitpaint']['repo']} #{filename}`
+    `node snapper.js #{@conf['gitpaint']['username']} #{filename}`
     @image = File.open "screens/#{filename}.png"
   end
 end
@@ -79,7 +79,7 @@ namespace :social do
     desc 'send to Twitter'
     task tweet: 'screenshot:take' do 
       puts 'sending to Twitter'
-      twitter_client.update_with_media @towers.ternary, @image
+      twitter_client.update_with_media content(@towers), @image
     end
 
     desc 'delete all tweets'
@@ -98,7 +98,7 @@ namespace :social do
     task toot: 'screenshot:take' do 
       puts 'sending to Mastodon'
       media = mastodon_client.upload_media @image
-      mastodon_client.create_status @towers.ternary, nil, [media.id]
+      mastodon_client.create_status content(@towers), nil, [media.id]
     end
 
     desc 'delete all toots'
@@ -137,4 +137,12 @@ end
 def mastodon_client 
   Mastodon::REST::Client.new base_url:     @conf['mastodon']['base_url'],
                              bearer_token: @conf['mastodon']['token']
+end
+
+def content towers 
+"""
+#{@towers.ternary}
+
+http://sam.pikesley.org/projects/hanoi-painter/
+"""
 end

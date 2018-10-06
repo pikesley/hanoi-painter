@@ -3,6 +3,7 @@ const puppeteer = require('puppeteer');
 (async () => {
   const browser = await puppeteer.launch();
   const page = await browser.newPage();
+  console.log(`https://github.com/${ process.argv[process.argv.length - 2] }`);
   await page.goto(`https://github.com/${ process.argv[process.argv.length - 2] }`);
   await page.screenshot(
     {
