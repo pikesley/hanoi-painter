@@ -1,6 +1,10 @@
 # Hanoi Painter
 
-_[Who among us hasn't wanted to play the Towers of Hanoi on the Github commit-history graph?](https://github.com/towers-of-hanoi)_
+_Who among us hasn't wanted to play the Towers of Hanoi on the Github commit-history graph?_
+
+[Github](https://github.com/towers-of-hanoi) ::
+[Twitter](https://twitter.com/hanoi_jane) ::
+[Mastodon](https://mastodon.me.uk/@hanoi_jane)
 
 I made some changes to my [Hanoi Jane](http://sam.pikesley.org/projects/hanoi-jane/) gem:
 * I added a [new formatter](https://github.com/pikesley/hanoi-jane/blob/master/lib/hanoi/jane/formatters/github.rb) which renders the output to a 52*7 grid, suitable for the Github graph
