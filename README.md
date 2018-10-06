@@ -1,6 +1,10 @@
 # Hanoi Painter
 
-_[Who among us hasn't wanted to play the Towers of Hanoi on the Github commit-history graph?](https://github.com/towers-of-hanoi)_
+_Who among us hasn't wanted to play the Towers of Hanoi on the Github commit-history graph?_
+
+**[Github](https://github.com/towers-of-hanoi) ::
+[Twitter](https://twitter.com/hanoi_jane) ::
+[Mastodon](https://mastodon.me.uk/@hanoi_jane)**
 
 I made some changes to my [Hanoi Jane](http://sam.pikesley.org/projects/hanoi-jane/) gem:
 * I added a [new formatter](https://github.com/pikesley/hanoi-jane/blob/master/lib/hanoi/jane/formatters/github.rb) which renders the output to a 52*7 grid, suitable for the Github graph
@@ -47,10 +51,10 @@ This all requires quite a lot of configuration, as you might expect, which shoul
 ## Gitpaint
 
 Needs:
-* A Github username and email, so the commits will be credited and counted correctly (I'm doing this on a separate, dedicated Github account)
-* The name of a (disposable) repo to work with: this will be created locally at `/tmp/#{repo}` and remotely at `https://github.com/#{github_user}/#{repo}` (and it will be mercilessly deleted from both places between runs)
+* A Github `username` and `email`, so the commits will be credited and counted correctly (I'm doing this on a separate, dedicated Github account)
+* The name of a (disposable) `repo` to work with: this will be created locally at `/tmp/#{repo}` and remotely at `https://github.com/#{github_user}/#{repo}` (and it will be mercilessly deleted from both places between runs)
 * A Github [personal access token](https://github.com/settings/tokens) that has the `repo` privileges and, crucially, the separate `delete repo` privilege
-* The path to an ssh key that can commit to the `#{github_user}` account
+* The path to an `ssh_key` that can commit to the `#{github_user}` account
 * A `scale_factor`, by which each commit count will be multiplied
 
 ## Hanoi Jane
