@@ -75,4 +75,4 @@ Needs:
 
 # Timescale
 
-It takes 2187 moves to solve the 7-disc Towers of Hanoi (3**7). EMF Camp 2020 is about 16600 hours away from now, 2018-10-06 (presuming it happens around the same time as this year's), and I want this to finish right in the middle of EMF. 16600 / 2187 is ~7.5, so I'm cronning this for three times a day and I'll review that schedule when the actual dates are announced
+It takes 2187 moves to solve the 7-disc Towers of Hanoi (3**7). EMF Camp 2020 is about 16600 hours away from now, 2018-10-06 (presuming it happens around the same time as this year's), and I want this to finish right in the middle of EMF. 16600 / 2187 is about 7.5, so I'm cronning this for three times a day and I'll review that schedule when the actual dates are announced
