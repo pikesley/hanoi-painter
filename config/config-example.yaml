@@ -10,12 +10,13 @@ mastodon:
   account_id: 123456
 
 gitpaint:
-  username:     github_account 
+  username:     github_account
   email:        github_email@domain.com
   ssh_key:      /path/to/ssh/key
   token:        github_token_with_repo_and_repo_delete_privs
   repo:         github_repo
-  scale_factor: 1 
+  scale_factor: 1
+  project_url:  where_can_people_read_about_this
 
 hanoi_jane:
   save_path: /some/path/towers.save
