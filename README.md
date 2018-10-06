@@ -58,6 +58,7 @@ Needs:
 * A Github [personal access token](https://github.com/settings/tokens) that has the `repo` privileges and, crucially, the separate `delete repo` privilege
 * The path to an `ssh_key` that can commit to the `#{github_user}` account
 * A `scale_factor`, by which each commit count will be multiplied
+* A `project_url` which will be added to the social media transmissions
 
 ## Hanoi Jane
 

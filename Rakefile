@@ -23,7 +23,7 @@ end
 
 namespace :gitpaint do
   desc 'configure gitpaint'
-  task :configure do 
+  task :configure do
     puts 'configuring Gitpaint'
     Gitpaint.configure do |config|
       config.username     = @conf['gitpaint']['username']
@@ -36,9 +36,9 @@ namespace :gitpaint do
   end
 end
 
-namespace :towers do 
+namespace :towers do
   desc 'deserialise the saved towers, or spawn a new set'
-  task :retrieve do 
+  task :retrieve do
     puts 'retrieving towers'
     begin
       @towers = Hanoi::Jane::ConstrainedTowers.deserialise @conf['hanoi_jane']['save_path']
@@ -50,13 +50,13 @@ namespace :towers do
   end
 
   desc 'render the towers unto Github'
-  task render: ['towers:retrieve', 'gitpaint:configure'] do 
+  task render: ['towers:retrieve', 'gitpaint:configure'] do
     puts 'rendering towers to Github'
     h = Hanoi::Jane.render_to_github @towers
     Gitpaint.paint h, message: @towers.ternary
   end
 
-  desc 'move and save' 
+  desc 'move and save'
   task move: 'towers:retrieve' do
     puts 'moving and saving towers'
     @towers.move
@@ -64,9 +64,9 @@ namespace :towers do
   end
 end
 
-namespace :screenshot do 
+namespace :screenshot do
   desc 'take a screenshot of the Github graph'
-  task take: 'towers:retrieve' do 
+  task take: 'towers:retrieve' do
     puts 'taking screenshots'
     filename = @towers.ternary
     `node snapper.js #{@conf['gitpaint']['username']} #{filename}`
@@ -74,12 +74,12 @@ namespace :screenshot do
   end
 end
 
-namespace :social do 
-  namespace :twitter do 
+namespace :social do
+  namespace :twitter do
     desc 'send to Twitter'
-    task tweet: 'screenshot:take' do 
+    task tweet: 'screenshot:take' do
       puts 'sending to Twitter'
-      twitter_client.update_with_media content(@towers), @image
+      twitter_client.update_with_media content, @image
     end
 
     desc 'delete all tweets'
@@ -95,10 +95,10 @@ namespace :social do
 
   namespace :mastodon do
     desc 'send to Mastodon'
-    task toot: 'screenshot:take' do 
+    task toot: 'screenshot:take' do
       puts 'sending to Mastodon'
       media = mastodon_client.upload_media @image
-      mastodon_client.create_status content(@towers), nil, [media.id]
+      mastodon_client.create_status content, nil, [media.id]
     end
 
     desc 'delete all toots'
@@ -112,8 +112,8 @@ namespace :social do
     end
   end
 
-  desc 'send everywhere' 
-  task :transmit do 
+  desc 'send everywhere'
+  task :transmit do
     Rake::Task['social:twitter:tweet'].invoke
     Rake::Task['social:mastodon:toot'].invoke
   end
@@ -134,15 +134,15 @@ def twitter_client
   end
 end
 
-def mastodon_client 
+def mastodon_client
   Mastodon::REST::Client.new base_url:     @conf['mastodon']['base_url'],
                              bearer_token: @conf['mastodon']['token']
 end
 
-def content towers 
+def content
 """
 #{@towers.ternary}
 
-http://sam.pikesley.org/projects/hanoi-painter/
+#{@conf['gitpaint']['project_url']}
 """
 end
