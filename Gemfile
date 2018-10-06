@@ -7,9 +7,9 @@ end
 gem 'twitter'
 gem 'mastodon-api', github: 'tootsuite/mastodon-api'
 
-gem 'hanoi-jane', path: '../hanoi-jane'
-gem 'wiper',      path: '../wiper'
-gem 'gitpaint',   path: '../gitpaint'
+gem 'hanoi-jane', github: 'pikesley/hanoi-jane'
+gem 'wiper',      github: 'pikesley/wiper'
+gem 'gitpaint',   github: 'pikesley/gitpaint'
 
 gem 'pry'
 gem 'rake'

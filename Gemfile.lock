@@ -1,15 +1,6 @@
 GIT
-  remote: https://github.com/tootsuite/mastodon-api
-  revision: 189deb8219ae1ce7c34386d9ad1ca7e4a5fec62c
-  specs:
-    mastodon-api (1.2.0)
-      addressable (~> 2.5)
-      buftok
-      http (~> 3.0)
-      oj (~> 3.3)
-
-PATH
-  remote: ../gitpaint
+  remote: https://github.com/pikesley/gitpaint
+  revision: 5c3a13e0c230613e709ff4bc1023eb6614f5f045
   specs:
     gitpaint (0.1.0)
       chunky_png (~> 1.3)
@@ -18,8 +9,9 @@ PATH
       nokogiri (~> 1.8)
       octokit (~> 4.12)
 
-PATH
-  remote: ../hanoi-jane
+GIT
+  remote: https://github.com/pikesley/hanoi-jane
+  revision: 0543961f78f1fd225647e8237ff0cbd1a97cae6d
   specs:
     hanoi-jane (0.4.0)
       gitpaint
@@ -27,10 +19,21 @@ PATH
       thor (~> 0.19)
       wiper
 
-PATH
-  remote: ../wiper
+GIT
+  remote: https://github.com/pikesley/wiper
+  revision: 607afacf17a69ae0a44c8116322b970c48569766
   specs:
     wiper (0.0.1)
+
+GIT
+  remote: https://github.com/tootsuite/mastodon-api
+  revision: 189deb8219ae1ce7c34386d9ad1ca7e4a5fec62c
+  specs:
+    mastodon-api (1.2.0)
+      addressable (~> 2.5)
+      buftok
+      http (~> 3.0)
+      oj (~> 3.3)
 
 GEM
   remote: https://rubygems.org/
