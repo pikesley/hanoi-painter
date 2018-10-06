@@ -1,0 +1,11 @@
+{
+  "name": "painter",
+  "version": "1.0.0",
+  "description": "Take some screenshots",
+  "main": "snapper.js",
+  "author": "pikesley <sam.pikesley@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "puppeteer": "1.8"
+  }
+}

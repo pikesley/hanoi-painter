@@ -1,0 +1,22 @@
+twitter:
+  consumer_key:    twitter_consumer_key
+  consumer_secret: twitter_consumer_secret
+  token:           twitter_token
+  secret:          twitter_secret
+
+mastodon:
+  token:      mastodon_token
+  base_url:   https://your.mastodon.instance
+  account_id: 123456
+
+gitpaint:
+  username:     github_account 
+  email:        github_email@domain.com
+  ssh_key:      /path/to/ssh/key
+  token:        github_token_with_repo_and_repo_delete_privs
+  repo:         github_repo
+  scale_factor: 1 
+
+hanoi_jane:
+  save_path: /some/path/towers.save
+  discs:     6
