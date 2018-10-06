@@ -1,3 +1,4 @@
 screens/
 node_modules/
-config/config.yaml
+!config/config-example.yaml
+config/
