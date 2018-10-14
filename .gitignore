@@ -2,3 +2,4 @@ screens/
 node_modules/
 !config/config-example.yaml
 config/
+.DS_Store
