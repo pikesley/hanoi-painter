@@ -9,12 +9,11 @@ require 'hanoi/jane'
 
 task :default => [:paint]
 
-
 desc 'do everything'
 task :paint do
   Rake::Task['towers:render'].invoke
 
-  puts 'sleeping for 10 seconds'
+  puts "#{DateTime.now.iso8601}: sleeping for 10 seconds"
   sleep 10
 
   Rake::Task['social:transmit'].invoke
@@ -24,7 +23,7 @@ end
 namespace :gitpaint do
   desc 'configure gitpaint'
   task :configure do
-    puts 'configuring Gitpaint'
+    puts "#{DateTime.now.iso8601}: configuring Gitpaint"
     Gitpaint.configure do |config|
       config.username     = @conf['gitpaint']['username']
       config.email        = @conf['gitpaint']['email']
@@ -39,7 +38,7 @@ end
 namespace :towers do
   desc 'deserialise the saved towers, or spawn a new set'
   task :retrieve do
-    puts 'retrieving towers'
+    puts "#{DateTime.now.iso8601}: retrieving towers"
     begin
       @towers = Hanoi::Jane::ConstrainedTowers.deserialise @conf['hanoi_jane']['save_path']
     rescue Errno::ENOENT => e
@@ -51,14 +50,14 @@ namespace :towers do
 
   desc 'render the towers unto Github'
   task render: ['towers:retrieve', 'gitpaint:configure'] do
-    puts 'rendering towers to Github'
+    puts "#{DateTime.now.iso8601}: rendering towers to Github"
     h = Hanoi::Jane.render_to_github @towers
     Gitpaint.paint h, message: @towers.ternary
   end
 
   desc 'move and save'
   task move: 'towers:retrieve' do
-    puts 'moving and saving towers'
+    puts "#{DateTime.now.iso8601}: moving and saving towers"
     @towers.move
     @towers.serialise @conf['hanoi_jane']['save_path']
   end
@@ -67,7 +66,7 @@ end
 namespace :screenshot do
   desc 'take a screenshot of the Github graph'
   task take: 'towers:retrieve' do
-    puts 'taking screenshots'
+    puts "#{DateTime.now.iso8601}: taking screenshots"
     filename = @towers.ternary
     `node snapper.js #{@conf['gitpaint']['username']} #{filename}`
     @image = File.open "screens/#{filename}.png"
@@ -78,7 +77,7 @@ namespace :social do
   namespace :twitter do
     desc 'send to Twitter'
     task tweet: 'screenshot:take' do
-      puts 'sending to Twitter'
+      puts "#{DateTime.now.iso8601}: sending to Twitter"
       twitter_client.update_with_media content, @image
     end
 
@@ -96,7 +95,7 @@ namespace :social do
   namespace :mastodon do
     desc 'send to Mastodon'
     task toot: 'screenshot:take' do
-      puts 'sending to Mastodon'
+      puts "#{DateTime.now.iso8601}: sending to Mastodon"
       media = mastodon_client.upload_media @image
       mastodon_client.create_status content, nil, [media.id]
     end
