@@ -2,8 +2,6 @@
 
 _Who among us hasn't wanted to play the Towers of Hanoi on the Github commit-history graph?_
 
-![Graph](https://s2.gifyu.com/images/toh.gif)
-
 **[Github](https://github.com/towers-of-hanoi) ::
 [Twitter](https://twitter.com/hanoi_jane) ::
 [Mastodon](https://mastodon.me.uk/@hanoi_jane)**
