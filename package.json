@@ -6,6 +6,6 @@
   "author": "pikesley <sam.pikesley@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "puppeteer": "1.8"
+    "puppeteer": "1.13"
   }
 }
