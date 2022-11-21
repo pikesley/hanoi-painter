@@ -3,7 +3,6 @@
 _Who among us hasn't wanted to play the Towers of Hanoi on the Github commit-history graph?_
 
 **[Github](https://github.com/towers-of-hanoi) ::
-[Twitter](https://twitter.com/hanoi_jane) ::
 [Mastodon](https://mastodon.me.uk/@hanoi_jane)**
 
 I made some changes to my [Hanoi Jane](http://sam.pikesley.org/projects/hanoi-jane/) gem:
@@ -38,7 +37,7 @@ There's some [heavily cargo-culted Node](https://github.com/pikesley/hanoi-paint
 
 ## Broadcast the screenshot
 
-To [Twitter](https://twitter.com/hanoi_jane) and [Mastodon](https://mastodon.me.uk/@hanoi_jane), using the [Ternary values from Hanoi Jane](https://github.com/pikesley/hanoi-jane/blob/master/README.md#constrained-version) as the text
+To [Mastodon](https://mastodon.me.uk/@hanoi_jane), using the [Ternary values from Hanoi Jane](https://github.com/pikesley/hanoi-jane/blob/master/README.md#constrained-version) as the text
 
 ## Move and serialise the towers
 
@@ -64,11 +63,6 @@ Needs:
 * A `save_path`, for saving and loading the towers between runs
 * A `discs` value (between 2 and 7)
 
-## Twitter
-
-Needs:
-* A `consumer_key`, a `consumer_secret`, a `token` and a `secret` - see [Twurl](https://github.com/twitter/twurl/blob/master/README) for help on setting these up
-
 ## Mastodon
 
 Needs:
@@ -80,4 +74,4 @@ Needs:
 
 # Timescale
 
-It takes 2187 moves to solve the 7-disc Towers of Hanoi (3**7). EMF Camp 2020 is about 16600 hours away from now, 2018-10-06 (presuming it happens around the same time as this year's), and I want this to finish right in the middle of EMF. 16600 / 2187 is about 7.5, so I'm cronning this for three times a day and I'll review that schedule when the actual dates are announced
+It takes 2187 moves to solve the 7-disc Towers of Hanoi (3**7). I've currently got this running 4 times a day, which means it will take ~546 days to finish
